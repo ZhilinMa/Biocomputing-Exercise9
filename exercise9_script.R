@@ -5,7 +5,7 @@ library(ggplot2)
 #Data Sources: https://www.uspto.gov/web/offices/ac/ido/oeip/taf/us_stat.htm
 #https://www.thebalancemoney.com/us-gdp-by-year-3305543
 #I thought that GDP and patent applications might have some relation from year to year, so 
-#we're going to fins out
+#we're going to find out
 
 #load the data into R dataframe
 gdppa <- read.csv("GDP_vs_Patents.csv")
