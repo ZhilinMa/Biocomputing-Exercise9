@@ -1,0 +1,39 @@
+#Exercise 9
+#Carolina Andrea Jimenez Soto
+#November 18
+
+#Problem One
+
+#set to correct working directory
+setwd("~/Desktop/Biocomputing/Biocomputing-Exercise9/")
+
+#gradedata.txt file containing the two variables: class and grade average
+
+#R script that loads this text file 
+GradevsClass <- read.table("gradedata.txt", header=TRUE, sep = ",")
+
+#R script to plot scatter plot with the two variables and a trend line
+
+ggplot(GradevsClass, aes(x=Class, y=Grade average)) + geom_point(size=2, shape=23) + xlab("Class Subject") + ylab("Grade Average") + geom_smooth(method = "lm")
++ theme_classic()
+
+#Problem Two
+
+#R script for two figures using data.txt
+
+#Part a: R script for a barplot of the means of the four populations
+
+populationdata= read.table("data.txt", header = TRUE, sep=",")
+
+ggplot(populationdata, mapping=aes(x=Region, y=Observations)) + stat_summary(fun.data="mean", geom="bar") + xlab("Region")+ ylab("Mean of Observations") + theme_classic()
+
+#R script for a scatter plot of all of the observations
+
+ggplot(populationdata, aes(x=Region, y=Observations)) + geom_jitter() + xlab("Region")+ ylab("Observations") + theme_classic()
+
+# The bar graph and scatter plot tell two different stories. The bar graph summarizes the data in the file into a smaller data range by just giving means.
+# This can be misleading to the total range of data; however, it can be beneficial for comparison between regions (giving around a 15 for all means). 
+#The scatter plot tells a fuller story, giving a total range of information. 
+#The scatter plot demonstrates a better understanding of the differences between the regions caused by outliern the mean.
+# So, although both graphs are from thea different need.  
+
