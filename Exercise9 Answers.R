@@ -12,6 +12,7 @@ ggplot(data=HSSdata, aes(x=Height, y=ShoeSize)) + geom_point() +   stat_smooth(m
 #first read in the values
 data = read.table("C:/Users/15135/Desktop/Exercise9/Biocomputing-Exercise9/data.txt", header=TRUE, sep =',')
 ggplot(data, aes(x=region, y=observations)) + stat_summary(geom="bar", fun="mean") + stat_summary(geom="errorbar", fun.data = "mean_se", width = .3)
+#Added standard error bars
 
 #make the scatter plot
 ggplot(data, aes(x=region, y=observations)) + geom_jitter()
